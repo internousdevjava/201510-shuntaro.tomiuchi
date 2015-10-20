@@ -29,6 +29,6 @@ public class KisoKadai2{
 	}
 			break;
 		}
-		System.out.println("³‰ğ‚Å‚·<br>");
+		System.out.println("³‰ğ‚Å‚·");
 	}
 }
