@@ -3,18 +3,18 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 public class KisoKadai2{
 	public static void main(String[] args) {
-		int ran = (int) (Math.random() * 10);
+		int ran = (int) (Math.random() * 100);
 		int player; //ブロックの外で宣言しなければいけない。中→外は使えない。
 		player = 0;
 		while (true) {
 			try {
 				InputStreamReader isr = new InputStreamReader(System.in);
 				BufferedReader br = new BufferedReader(isr);
-				System.out.println("数字を入力してください"); // 数字入力の趣旨を伝える
+				System.out.println("0～100までの数字を入力してください"); // 数字入力の趣旨を伝える
 				String buf = (br.readLine());
 				player = Integer.parseInt(buf); //ここで代入されているのでplayer = 0;は外でも良い
 			} catch (Exception e) {
-				System.out.println("数字にしてください。");
+				System.out.println("0～100までの数字にしてください。");
 				continue;
 			}
 
