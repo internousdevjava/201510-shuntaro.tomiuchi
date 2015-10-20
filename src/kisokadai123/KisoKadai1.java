@@ -9,27 +9,24 @@ import java.io.InputStreamReader;
 				int y = 0 ;
 				int j = 0 ;
 				int k = 0 ;
-				//xŽ²‚ÆyŽ²‚Ì”Žš‚ðŒˆ‚ß‚Ä‚à‚ç‚¤B
-				System.out.println("“ü—Í‚³‚ê‚½xŽ²‚ÆyŽ²‚Ì”Žš‚Ü‚Å‚Ì‹ã‹ã‚Ì“š‚¦‚ð•\Œ`Ž®‚Åo—Í‚µ‚Ü‚·");
+				//xè»¸ã¨yè»¸ã®æ•°å­—ã‚’æ±ºã‚ã¦ã‚‚ã‚‰ã†ã€‚
+				System.out.println("å…¥åŠ›ã•ã‚ŒãŸxè»¸ã¨yè»¸ã®æ•°å­—ã¾ã§ã®ä¹ä¹ã®ç­”ãˆã‚’è¡¨å½¢å¼ã§å‡ºåŠ›ã—ã¾ã™");
 					try{
 						while(j==0 & k==0){
-							System.out.println("0`100‚Ü‚Å‚ÌxŽ²‚Ì”Žš‚ð“ü—Í‚ð‚µ‚Ä‰º‚³‚¢B");
+							System.out.println("0ï½ž100ã¾ã§ã®xè»¸ã®æ•°å­—ã‚’å…¥åŠ›ã‚’ã—ã¦ä¸‹ã•ã„ã€‚");
 							j = Integer.parseInt(br.readLine());
-							System.out.println("0`100‚Ü‚Å‚ÌyŽ²‚Ì”Žš‚ð“ü—Í‚ð‚µ‚Ä‰º‚³‚¢B");
+							System.out.println("0ï½ž100ã¾ã§ã®yè»¸ã®æ•°å­—ã‚’å…¥åŠ›ã‚’ã—ã¦ä¸‹ã•ã„ã€‚");
 							k = Integer.parseInt(br.readLine());
 						}
 					}catch (Exception e){
-						System.out.println("0`100‚Ü‚Å‚Ì”Žš‚ð“ü—Í‚ð‚µ‚Ä‰º‚³‚¢\n" + e +"‚ª“ü—Í‚³‚ê‚Ü‚µ‚½");
+						System.out.println("0ï½ž100ã¾ã§ã®æ•°å­—ã‚’å…¥åŠ›ã‚’ã—ã¦ä¸‹ã•ã„\n" + e +"ãŒå…¥åŠ›ã•ã‚Œã¾ã—ãŸ");
 					}
-					//xŽ²‚ÆyŽ²‚Ü‚Å‚Ì‹ã‹ã•\‚ðì¬
+					//xè»¸ã¨yè»¸ã¾ã§ã®ä¹ä¹è¡¨ã‚’ä½œæˆ
 					for(x=j;x>=1;x--){
 						for(y=1;y<=k;y++){
 							System.out.print(x*y+" ");
-								if(y==j){
-									System.out.println();
-								}
 						}
+							System.out.println();
 					}
+			}
 		}
-
-	}
