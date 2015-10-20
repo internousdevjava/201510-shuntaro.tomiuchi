@@ -4,31 +4,31 @@ import java.io.InputStreamReader;
 public class KisoKadai2{
 	public static void main(String[] args) {
 		int ran = (int) (Math.random() * 100);
-		int player; //ƒuƒƒbƒN‚ÌŠO‚ÅéŒ¾‚µ‚È‚¯‚ê‚Î‚¢‚¯‚È‚¢B’†¨ŠO‚Íg‚¦‚È‚¢B
+		int player; //ãƒ–ãƒ­ãƒƒã‚¯ã®å¤–ã§å®£è¨€ã—ãªã‘ã‚Œã°ã„ã‘ãªã„ã€‚ä¸­â†’å¤–ã¯ä½¿ãˆãªã„ã€‚
 		player = 0;
 		while (true) {
 			try {
 				InputStreamReader isr = new InputStreamReader(System.in);
 				BufferedReader br = new BufferedReader(isr);
-				System.out.println("0`100‚Ü‚Å‚Ì”š‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢"); // ”š“ü—Í‚Ìï|‚ğ“`‚¦‚é
+				System.out.println("0ï½100ã¾ã§ã®æ•°å­—ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„"); // æ•°å­—å…¥åŠ›ã®è¶£æ—¨ã‚’ä¼ãˆã‚‹
 				String buf = (br.readLine());
-				player = Integer.parseInt(buf); //‚±‚±‚Å‘ã“ü‚³‚ê‚Ä‚¢‚é‚Ì‚Åplayer = 0;‚ÍŠO‚Å‚à—Ç‚¢
+				player = Integer.parseInt(buf); //ã“ã“ã§ä»£å…¥ã•ã‚Œã¦ã„ã‚‹ã®ã§player = 0;ã¯å¤–ã§ã‚‚è‰¯ã„
 			} catch (Exception e) {
-				System.out.println("0`100‚Ü‚Å‚Ì”š‚É‚µ‚Ä‚­‚¾‚³‚¢B");
+				System.out.println("0ï½100ã¾ã§ã®æ•°å­—ã«ã—ã¦ãã ã•ã„ã€‚");
 				continue;
 			}
 
 			if (ran < player) {
-				System.out.println("³‰ğ‚Ì”š‚Í‚à‚Á‚Æ¬‚³‚¢‚Å‚·");
+				System.out.println("æ­£è§£ã®æ•°å­—ã¯ã‚‚ã£ã¨å°ã•ã„ã§ã™");
 
 				continue;
 			} else if (ran > player) {
-				System.out.println("³‰ğ‚Ì”š‚Í‚à‚Á‚Æ‘å‚«‚¢‚Å‚·");
+				System.out.println("æ­£è§£ã®æ•°å­—ã¯ã‚‚ã£ã¨å¤§ãã„ã§ã™");
 				continue;
-		
+
 	}
 			break;
 		}
-		System.out.println("³‰ğ‚Å‚·");
+		System.out.println("æ­£è§£ã§ã™");
 	}
 }

@@ -12,144 +12,143 @@ import java.io.PrintWriter;
 
 public class KisoKadai3{
 	public static void main(String[] args) throws IOException {
-	//throws IOException ‚ğƒƒ\ƒbƒh‚É‚Â‚¯‚é——Rhttp://www.javadrive.jp/start/file/index4.html
-		System.out.println("--ˆ—ŠJn--");
+	//throws IOException ã‚’ãƒ¡ã‚½ãƒƒãƒ‰ã«ã¤ã‘ã‚‹ç†ç”±http://www.javadrive.jp/start/file/index4.html
+			System.out.println("--å‡¦ç†é–‹å§‹--");
 			if(args.length == 0){
-			
-	System.out.println("ƒRƒ}ƒ“ƒhƒ‰ƒCƒ“ˆø”‚ğw’è‚µ‚Ä‚â‚è’¼‚µ‚Ä‚­‚¾‚³‚¢B");
-				System.out.println("ˆ—‚ğI—¹‚µ‚Ü‚·");
-				return;
-			}
-				if(args.length != 0){//0‚¾‚Á‚½‚çÅŒã‚É‚¢‚Á‚ÄI—¹
-					File file = new File(args[0]);
-					File dir = new File(file.getParent());
-					/*
-					 * ”z—ñargs‚Ì[0]‚ğFileŒ^file‚Æ‚µ‚ÄƒCƒ“ƒXƒ^ƒ“ƒX‰»‚·‚éB
-					 * file‚ª‘¶İ‚µ‚È‚©‚Á‚½‚Ég‚¤‚Ì‚ÅgetParent‚Å‚ ‚é•K—v«‚ª‚ ‚é
-					   FileƒIƒuƒWƒFƒNƒg‚ªQÆ‚·‚éƒtƒ@ƒCƒ‹‚à‚µ‚­‚ÍƒfƒBƒŒƒNƒgƒŠ‚ª
-					   Ši”[‚³‚ê‚Ä‚¢‚éƒfƒBƒŒƒNƒgƒŠ‚Ìâ‘ÎPATH–¼‚ğ•Ô‚µ‚Ü‚·B
-					   getAbsolutePath( )
-					   FileƒIƒuƒWƒFƒNƒg‚ªQÆ‚·‚éƒtƒ@ƒCƒ‹‚à‚µ‚­‚ÍƒfƒBƒŒƒNƒgƒŠ‚Ìâ‘ÎPATH–¼‚ğ•Ô‚µ‚Ü‚·B
-					 */
-						if (dir.exists()){
-						    System.out.println("ƒfƒBƒŒƒNƒgƒŠ‚ªŒ©‚Â‚©‚è‚Ü‚µ‚½");
-						}else{
-						    System.out.println("ƒfƒBƒŒƒNƒgƒŠ‚Í‘¶İ‚µ‚Ü‚¹‚ñ\nV‚µ‚¢ƒfƒBƒŒƒNƒgƒŠ‚ğì¬‚µ‚Ü‚·B\n+file.getAbsolutePath()");
-						    //FileŒ^‚ğdirectory1‚ÅƒCƒ“ƒXƒ^ƒ“ƒX‰»
-						    /*File directory1 = new File(file.getParent());
-						    Å‰‚É1‚ÂƒCƒ“ƒXƒ^ƒ“ƒX‰»‚µ‚Ä‚¢‚é‚Ì‚Å‚»‚ê‚ğg‚¦‚Î‚æ‚¢
-						    ‚±‚±‚ÅéŒ¾‚µ‚Ä‚à—˜•Ö«‚ª‚È‚¢B‚à‚Á‚ÆŠO‚ÌƒuƒƒbƒN‚ÅéŒ¾‚·‚éB
-						    */
-						    //dir‚ÉƒfƒBƒŒƒNƒgƒŠ‚Ìì¬
-						    dir.mkdir();
-						    System.out.println("V‚µ‚¢ƒfƒBƒŒƒNƒgƒŠ‚ğì¬‚µ‚Ü‚µ‚½");
-					
-						}
-						try{ //try/catch‚Ì—áŠOˆ— http://www.javadrive.jp/start/file/index4.html
-						if(file.exists()){ //‚à‚µfile(args[0]‚Ì‚±‚Æ)‚ª‘¶İ‚·‚ê‚Îˆ—‚ğs‚¤
-							System.out.println("ƒtƒ@ƒCƒ‹‚ªŒ©‚Â‚©‚è‚Ü‚µ‚½");
-						}else{
-							System.out.println("ƒtƒ@ƒCƒ‹‚Í‘¶İ‚µ‚Ü‚¹‚ñ");
-							//FileŒ^‚ğnewfile‚ÅƒCƒ“ƒXƒ^ƒ“ƒX‰»
-						    /*File newfile = new File(directory1, "new file.txt");
-						      Å‰‚Éfile‚ÅƒCƒ“ƒXƒ^ƒ“ƒX‰»‚³‚ê‚Ä‚¢‚é‚Ì‚Å‚»‚ê‚ğg‚¦‚Î‚æ‚¢*/
-							file.createNewFile();
-							System.out.println("ƒtƒ@ƒCƒ‹‚ğì¬‚µ‚Ü‚µ‚½");
-					
-						}
-						}catch(IOException e){
-							System.out.println(e);
-
-						}
-						while(true){
-							System.out.println("\n\n--ƒƒjƒ…[--\n\n 1:“Ç‚İ‚İ\n 2:‘‚«‚İ\n9:I—¹\n‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢");
-						
-							BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-							//ƒƒjƒ…[”Ô†‚ğ“Ç‚İæ‚è‚½‚¢‚Ì‚Åã‹L‚ğs‚¢“ü—Í‚³‚ê‚½“à—e‚ğæ“¾‚·‚éB
-							String str = br.readLine();
-							//æ“¾‚³‚ê‚½“à—eˆês‚ğStringŒ^‚Ìstr‚É‘ã“ü
-							int nu ;
-							nu = 0 ;
-							//intŒ^‚Ìnu‚ğéŒ¾A‚Æ‚è‚ ‚¦‚¸0‚ğ‘ã“ü
-							if(str.matches("^[0-9]")){
-							//‚à‚µstr‚Ì’†g‚ª0-9‚¾‚Á‚½ê‡‚Æˆá‚Á‚½ê‡‚Å•ªŠò
-								nu=Integer.parseInt(str);
-							//”š‚ğintŒ^‚Åg—p‚µ‚½‚¢‚Ì‚Åã‹L‚ÅStringŒ^‚©‚çintŒ^‚Ö•ÏŠ·
-							}else{
-								System.out.println("”¼Šp‰p”š‚Åƒƒjƒ…[‚ğ‘I‘ğ‚µ‚Ä‚­‚¾‚³‚¢");
-								//”šˆÈŠO‚Ìê‡‚Íelse‚É“ü‚é
-							}
-								if(nu==1){//“Ç‚İ‚İ
-									try{
-										FileReader filereader1 = new FileReader(file);
-										BufferedReader filebr1 = new BufferedReader(filereader1);
-										/*ƒtƒ@ƒCƒ‹‚Ì“à—e‚ğ“Ç‚İæ‚é‚½‚ß‚Éã‹L‚ğs‚¤
-										 * http://www.javadrive.jp/start/stream/index3.html
-										 */
-										String filestr;
-										  while((filestr = filebr1.readLine()) != null){
-										    System.out.println(filestr);
-										  }
-										  filebr1.close();
-										  //ˆês‚¸‚ÂŒJ‚è•Ô‚µ“Ç‚İæ‚èo—Í‚µnull‚É‚È‚Á‚½‚çclose‚·‚éB
-									}catch(FileNotFoundException e){
-									  System.out.println(e);
-									  //FileReade‚Ì—áŠOˆ—
-									}catch(IOException e){
-									  System.out.println(e);
-									  //BufferedReader‚Ì—áŠOˆ—
-									}
-								}
-						
-								if(nu==2){//‘‚«‚İ
-								try {
-									boolean mode = false;
-									System.out.println("\n\nƒ‚[ƒh‚Ìİ’è\n\n1:’Ç‹L\n2:ã‘‚«");
-									BufferedReader br2 = new BufferedReader(new InputStreamReader(System.in));
-									String str2 = br2.readLine();
-								
-									// ƒ‚[ƒh‚ğŒˆ‚ß‚é
-									switch (str2) {
-									case "1":
-										mode = true;
-										break;
-									case "2":
-										mode = false;
-								
-									default:
-										break;
-									}
-									//^‹U‚Ìİ’è‚ğ‚µ‚Ä‘ã“ü‚·‚é http://www.javadrive.jp/start/stream/index5.html
-									//o—Íæ‚ğì¬‚·‚é
-									FileWriter fw = new FileWriter(file.getAbsolutePath(), mode);
-									PrintWriter pw = new PrintWriter(new BufferedWriter(fw));
-									/*PrintWriter‚ÆBufferedWriter‚ÍFileWriter‚ÌŠg’£‹@”\
-									 * http://www.javadrive.jp/start/stream/
-									 * mode‚É^‹U‚ğ‘ã“ü‚·‚é–‚É‚æ‚Á‚Ä©“®‚Åƒ‚[ƒh‚ğØ‚è‘Ö‚¦‚é
-									 */
-									BufferedReader br3 = new BufferedReader(new InputStreamReader(System.in));
-									String str3 = br3.readLine();
-									//“ü—Í‚ğ“Ç‚İæ‚éˆês‚ğStringŒ^str3‚É‚Ü‚Æ‚ß‚é
-									pw.println(str3);
-									//‘‚«‚Ş“à—e‚ğw’è‚µ‘‚«‚İ
-									pw.close();
-									//ˆ—‚ÌI—¹
-				
-				} catch (IOException ex) {
-									ex.printStackTrace();
-									//—áŠOˆ—
-								}
-							}
-							if(nu==9){//I—¹
-								System.out.println("ˆ—‚ğI—¹‚µ‚Ü‚·B");
-								break;
-							}
-							if(nu==9){//I—¹
-							System.out.println("ˆ—‚ğI—¹‚µ‚Ü‚·B");
-							break;
-							}
-						}
-		
+				System.out.println("ã‚³ãƒãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³å¼•æ•°ã‚’æŒ‡å®šã—ã¦ã‚„ã‚Šç›´ã—ã¦ãã ã•ã„ã€‚");
+					System.out.println("å‡¦ç†ã‚’çµ‚äº†ã—ã¾ã™");
+					return;
 				}
+					if(args.length != 0){
+						File file = new File(args[0]);
+						File dir = new File(file.getAbsolutePath( ));
+						/*
+						 * é…åˆ—argsã®[0]ã‚’Fileå‹fileã¨ã—ã¦ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹åŒ–ã™ã‚‹ã€‚
+						 * fileãŒå­˜åœ¨ã—ãªã‹ã£ãŸæ™‚ã«ä½¿ã†ã®ã§getParentã§ã‚ã‚‹å¿…è¦æ€§ãŒã‚ã‚‹
+						   Fileã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãŒå‚ç…§ã™ã‚‹ãƒ•ã‚¡ã‚¤ãƒ«ã‚‚ã—ãã¯ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªãŒ
+						   æ ¼ç´ã•ã‚Œã¦ã„ã‚‹ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã®çµ¶å¯¾PATHåã‚’è¿”ã—ã¾ã™ã€‚
+						   getAbsolutePath( )
+						   Fileã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãŒå‚ç…§ã™ã‚‹ãƒ•ã‚¡ã‚¤ãƒ«ã‚‚ã—ãã¯ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã®çµ¶å¯¾PATHåã‚’è¿”ã—ã¾ã™ã€‚
+						 */
+							if (dir.exists()){
+							    System.out.println("ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªãŒè¦‹ã¤ã‹ã‚Šã¾ã—ãŸ");
+							}else{
+							    System.out.println("ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã¯å­˜åœ¨ã—ã¾ã›ã‚“\næ–°ã—ã„ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã‚’ä½œæˆã—ã¾ã™ã€‚\n+file.getAbsolutePath()");
+							    //Fileå‹ã‚’directory1ã§ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹åŒ–
+							    /*File directory1 = new File(file.getParent());
+							    æœ€åˆã«1ã¤ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹åŒ–ã—ã¦ã„ã‚‹ã®ã§ãã‚Œã‚’ä½¿ãˆã°ã‚ˆã„
+							    ã“ã“ã§å®£è¨€ã—ã¦ã‚‚åˆ©ä¾¿æ€§ãŒãªã„ã€‚ã‚‚ã£ã¨å¤–ã®ãƒ–ãƒ­ãƒƒã‚¯ã§å®£è¨€ã™ã‚‹ã€‚
+							    */
+							    //dirã«ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã®ä½œæˆ
+							    dir.mkdir();
+							    System.out.println("æ–°ã—ã„ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã‚’ä½œæˆã—ã¾ã—ãŸ");
+
+							}
+							try{ //try/catchã®ä¾‹å¤–å‡¦ç† http://www.javadrive.jp/start/file/index4.html
+							if(file.exists()){ //ã‚‚ã—file(args[0]ã®ã“ã¨)ãŒå­˜åœ¨ã™ã‚Œã°å‡¦ç†ã‚’è¡Œã†
+								System.out.println("ãƒ•ã‚¡ã‚¤ãƒ«ãŒè¦‹ã¤ã‹ã‚Šã¾ã—ãŸ");
+							}else{
+								System.out.println("ãƒ•ã‚¡ã‚¤ãƒ«ã¯å­˜åœ¨ã—ã¾ã›ã‚“");
+								//Fileå‹ã‚’newfileã§ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹åŒ–
+							    /*File newfile = new File(directory1, "new file.txt");
+							      æœ€åˆã«fileã§ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹åŒ–ã•ã‚Œã¦ã„ã‚‹ã®ã§ãã‚Œã‚’ä½¿ãˆã°ã‚ˆã„*/
+								file.createNewFile();
+								System.out.println("ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä½œæˆã—ã¾ã—ãŸ");
+
+							}
+							}catch(IOException e){
+								System.out.println(e);
+
+							}
+							while(true){
+								System.out.println("\n\n--ãƒ¡ãƒ‹ãƒ¥ãƒ¼--\n\n 1:èª­ã¿è¾¼ã¿\n 2:æ›¸ãè¾¼ã¿\n9:çµ‚äº†\nã‚’å…¥åŠ›ã—ã¦ãã ã•ã„");
+
+								BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+								//ãƒ¡ãƒ‹ãƒ¥ãƒ¼ç•ªå·ã‚’èª­ã¿å–ã‚ŠãŸã„ã®ã§ä¸Šè¨˜ã‚’è¡Œã„å…¥åŠ›ã•ã‚ŒãŸå†…å®¹ã‚’å–å¾—ã™ã‚‹ã€‚
+								String str = br.readLine();
+								//å–å¾—ã•ã‚ŒãŸå†…å®¹ä¸€è¡Œã‚’Stringå‹ã®strã«ä»£å…¥
+								int nu ;
+								nu = 0 ;
+								//intå‹ã®nuã‚’å®£è¨€ã€ã¨ã‚Šã‚ãˆãš0ã‚’ä»£å…¥
+								if(str.matches("^[0-9]")){
+								//ã‚‚ã—strã®ä¸­èº«ãŒ0-9ã ã£ãŸå ´åˆã¨é•ã£ãŸå ´åˆã§åˆ†å²
+									nu=Integer.parseInt(str);
+								//æ•°å­—ã‚’intå‹ã§ä½¿ç”¨ã—ãŸã„ã®ã§ä¸Šè¨˜ã§Stringå‹ã‹ã‚‰intå‹ã¸å¤‰æ›
+								}else{
+									System.out.println("åŠè§’è‹±æ•°å­—ã§ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã‚’é¸æŠã—ã¦ãã ã•ã„");
+									//æ•°å­—ä»¥å¤–ã®å ´åˆã¯elseã«å…¥ã‚‹
+								}
+									if(nu==1){//èª­ã¿è¾¼ã¿
+										try{
+											FileReader filereader1 = new FileReader(file);
+											BufferedReader filebr1 = new BufferedReader(filereader1);
+											/*ãƒ•ã‚¡ã‚¤ãƒ«ã®å†…å®¹ã‚’èª­ã¿å–ã‚‹ãŸã‚ã«ä¸Šè¨˜ã‚’è¡Œã†
+											 * http://www.javadrive.jp/start/stream/index3.html
+											 */
+											String filestr;
+											  while((filestr = filebr1.readLine()) != null){
+											    System.out.println(filestr);
+											  }
+											  filebr1.close();
+											  //ä¸€è¡Œãšã¤ç¹°ã‚Šè¿”ã—èª­ã¿å–ã‚Šå‡ºåŠ›ã—nullã«ãªã£ãŸã‚‰closeã™ã‚‹ã€‚
+										}catch(FileNotFoundException e){
+										  System.out.println(e);
+										  //FileReadeã®ä¾‹å¤–å‡¦ç†
+										}catch(IOException e){
+										  System.out.println(e);
+										  //BufferedReaderã®ä¾‹å¤–å‡¦ç†
+										}
+									}
+
+									if(nu==2){//æ›¸ãè¾¼ã¿
+									try {
+										boolean mode = false;
+										System.out.println("\n\nãƒ¢ãƒ¼ãƒ‰ã®è¨­å®š\n\n1:è¿½è¨˜\n2:ä¸Šæ›¸ã");
+										BufferedReader br2 = new BufferedReader(new InputStreamReader(System.in));
+										String str2 = br2.readLine();
+
+										// ãƒ¢ãƒ¼ãƒ‰ã‚’æ±ºã‚ã‚‹
+										switch (str2) {
+										case "1":
+											mode = true;
+											break;
+										case "2":
+											mode = false;
+
+										default:
+											break;
+										}
+										//çœŸå½ã®è¨­å®šã‚’ã—ã¦ä»£å…¥ã™ã‚‹ http://www.javadrive.jp/start/stream/index5.html
+										//å‡ºåŠ›å…ˆã‚’ä½œæˆã™ã‚‹
+										FileWriter fw = new FileWriter(file.getAbsolutePath(), mode);
+										PrintWriter pw = new PrintWriter(new BufferedWriter(fw));
+										/*PrintWriterã¨BufferedWriterã¯FileWriterã®æ‹¡å¼µæ©Ÿèƒ½
+										 * http://www.javadrive.jp/start/stream/
+										 * modeã«çœŸå½ã‚’ä»£å…¥ã™ã‚‹äº‹ã«ã‚ˆã£ã¦è‡ªå‹•ã§ãƒ¢ãƒ¼ãƒ‰ã‚’åˆ‡ã‚Šæ›¿ãˆã‚‹
+										 */
+										BufferedReader br3 = new BufferedReader(new InputStreamReader(System.in));
+										String str3 = br3.readLine();
+										//å…¥åŠ›ã‚’èª­ã¿å–ã‚‹ä¸€è¡Œã‚’Stringå‹str3ã«ã¾ã¨ã‚ã‚‹
+										pw.println(str3);
+										//æ›¸ãè¾¼ã‚€å†…å®¹ã‚’æŒ‡å®šã—æ›¸ãè¾¼ã¿
+										pw.close();
+										//å‡¦ç†ã®çµ‚äº†
+
+					} catch (IOException ex) {
+										ex.printStackTrace();
+										//ä¾‹å¤–æ™‚å‡¦ç†
+									}
+								}
+								if(nu==9){//çµ‚äº†
+									System.out.println("å‡¦ç†ã‚’çµ‚äº†ã—ã¾ã™ã€‚");
+									break;
+								}
+								if(nu==9){//çµ‚äº†
+								System.out.println("å‡¦ç†ã‚’çµ‚äº†ã—ã¾ã™ã€‚");
+								break;
+								}
+							}
+
+					}
 	}
 }
